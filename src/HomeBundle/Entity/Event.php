@@ -1,16 +1,16 @@
 <?php
 
-namespace AdminBundle\Entity;
+namespace HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Article
  *
- * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="AdminBundle\Repository\ArticleRepository")
+ * @ORM\Table(name="event")
+ * @ORM\Entity(repositoryClass="HomeBundle\Repository\EventRepository")
  */
-class Article
+class Event
 {
     /**
      * @var int

@@ -1,86 +1,121 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
+<head>
+  <title>{% block title %}Social Network{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  -->
+  <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
+  <link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+  <style>
 
-        <meta charset="UTF-8" />
-        <title>{% block title %}Bienvenue!{% endblock %}</title>
-        {% block stylesheets %}
+  	body {
+  		padding-top: 70px;
+  	}
 
-        <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
-        <link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
-          
+  	.publication{
+  		padding: 50px;
+  		background-color: #f1f1f1;
+  	}
 
-
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Eygo Coiffeur</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('js/bootstrap.min.js')}}" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="{{ asset('css/styles.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('bundles/js/jquery.min.js') }}" rel="stylesheet" type="text/js">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <!-- Theme CSS -->
-    <link href="{{asset('/css/styles.css')}}" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    </head>
-    <body style="background-color: #A9F5A9;">
-      
-       <h1> {% block pageTitle %}{% endblock %}</h1>
-
- {% if is_granted('ROLE_ADMIN') %}
-<nav id="nav-main" style="background-color: #01DF3A">
-    <ul>
-        <li><a href="{{path('home_notes')}}" ><img src="{{asset('images/dev.png')}}"> </a></li>
-        <li><a href="{{path('admin_article')}}" ><img src="{{asset('images/dev+.png')}}"></a></li>
-        <li><a href="{{path('fos_user_security_logout')}}" ><img src="{{asset('images/compte.png')}}"></a></li>
-    </ul>
-</nav>
-
-</nav>
-<div id="nav-trigger">
-    <span>
-        <li><a href="{{path('home_notes')}}" ><img src="{{asset('images/dev.png')}}"> </a></li>
-        <li><a href="{{path('admin_article')}}" ><img src="{{asset('images/dev+.png')}}"> </a></li>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
     
-    </span>
-</div>
-<nav id="nav-mobile">  
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">SOCIAL NETWORK</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{{path('evenement_index')}}">Événement</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Connexion</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Inscription</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      {% block menu %}
 
-{% else %}
-<div class="alert alert-success">
-  <strong><a href="{{path('fos_user_security_login')}}" ><h3 style="text-align: center; font-family: cursive;">CONNEXION</h3> </a></strong>
+      {% endblock %}
+
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+
+      {% block event %}
+    	<div class="publication">
+    		<h2>Titre publication</h2>
+    		<h5><span>de Denis<span></h5>
+    		<p>BLABLABLAllllllllllllllllllll</p>
+    	</div>
+      {% endblock %}
+
+    </div>
+    {% block lastevent %}
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
 </div>
 
-<img class="img-responsive center-block" src="{{asset('images/logo.png')}}">
-{% endif %}
+<footer class="container-fluid text-center">
+  <p>Social Network | Copyright</p>
+</footer>
 
-        {% block javascripts %}{% endblock %}
-
- {% block body %}
-
-
-
-           {% endblock %}
-
-    </body>
+</body>
 </html>

@@ -1,6 +1,11 @@
+home_evenement:
+    resource: "@HomeBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+
 home_homepage:
     path:     /
     defaults: { _controller: HomeBundle:Default:index }
-home_notes:
-    path:     /notes
+
+publication_index:
+    path:     /publication
     defaults: { _controller: HomeBundle:Default:notes }

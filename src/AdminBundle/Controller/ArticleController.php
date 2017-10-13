@@ -25,28 +25,8 @@ class ArticleController extends Controller
            'label' => 'Titre', 
            'attr' => array('style' => 'width: 400px;') 
            ))
-           ->add('titre1', 'textarea', array(
-           'label' => 'Sous-Titre 1', 
-           'attr' => array('style' => 'width: 400px;')
-          ))
            ->add('etape1', 'textarea', array(
            'label' => 'Etape 1', 
-           'attr' => array('style' => 'width: 400px; height: 400px;')
-          ))
-           ->add('titre2', 'textarea', array(
-           'label' => 'Sous-Titre 2', 
-           'attr' => array('style' => 'width: 400px;')
-          ))
-           ->add('etape2', 'textarea', array(
-           'label' => 'Etape 2', 
-           'attr' => array('style' => 'width: 400px; height: 400px;')
-          ))
-           ->add('titre3', 'textarea', array(
-           'label' => 'Sous-Titre 3', 
-           'attr' => array('style' => 'width: 400px;')
-          ))
-           ->add('etape3', 'textarea', array(
-           'label' => 'Etape 3', 
            'attr' => array('style' => 'width: 400px; height: 400px;')
           ))
            ->add('image',      new ImageType())

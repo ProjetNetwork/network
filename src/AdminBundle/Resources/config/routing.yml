@@ -1,6 +1,7 @@
 admin_article:
     path:     /article
     defaults: { _controller: AdminBundle:Article:ajout }
+    
 admin_delete_article:
     pattern:  /article/{id}
     defaults: { _controller: AdminBundle:Article:deleteArticle }

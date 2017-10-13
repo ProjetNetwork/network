@@ -22,7 +22,8 @@ class DefaultController extends Controller
         return $this->render('HomeBundle:Default:index.html.twig', array('sheets' => $sheets) );
 
     }
-        public function notesAction(Request $request)
+
+    public function notesAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('AdminBundle:Article');
@@ -32,7 +33,4 @@ class DefaultController extends Controller
         return $this->render('HomeBundle:Default:notes.html.twig', array('sheets' => $sheets) );
 
     }
-
-
-
 }
