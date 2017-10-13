@@ -1,17 +1,10 @@
 {% extends "::base.html.twig" %}
-
-
-{% block body %}
+{% block publication %}
   {% if is_granted('ROLE_ADMIN') %}
-  <!DOCTYPE html>
-  <html lang="en">
-    <body>
-      <h1 style="text-align: center; font-family: cursive;">
-      <h1 style="text-align:center; font-family: Cursive;"> PUBLICATIONS </h1>
+
+      <h3 style="text-align: center;"> PUBLICATIONS </h3>
       {% for sheet in sheets %}
- 
-            <strong>
-<div class="alert alert-success">
+
               {% if is_granted('ROLE_SUPER_ADMIN') %}
              	 <a href="{{ path('admin_delete_article', {'id': sheet.id }) }}"><button type="button" class="btn btn-danger">Supprimer</button></a> 
               {%endif%}
@@ -23,12 +16,8 @@
             alt="{{ sheet.image.alt }}"
           />
           <div class="alert col-lg-12"><legend style="text-align:center;">
-            <h2 style="text-align:center; color: #01DF3A; ">{{sheet.titre1}}</h2></br>
             <h4 style="text-align:center;">{{sheet.etape1|nl2br}}</h4></br>
-            <h2 style="text-align:center; color: #01DF3A">{{sheet.titre2}}</h2></br>
-            <h4 style="text-align:center;">{{sheet.etape2|nl2br}}</h4></br>
-            <h2 style="text-align:center; color: #01DF3A">{{sheet.titre3}}</h2></br>
-            <h4 style="text-align:center;">{{sheet.etape3|nl2br}}</h4></br>
+     
         </div>
         </br>
         </br>
