@@ -1,4 +1,9 @@
 {% extends "::base.html.twig" %}
+ {% block leftmenu%}
+    <ul class="nav navbar-nav">
+        <li><a href="{{path('publication_index')}}">Voir les publications</a></li>
+    </ul>
+    {% endblock %}
 {% block publication %}
 <div class="well">   
 	{{ form_start(form)}}

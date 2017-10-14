@@ -1,9 +1,9 @@
-admin_article:
-    path:     /article
+publication_create:
+    path:     /publication/create
     defaults: { _controller: AdminBundle:Article:ajout }
     
-admin_delete_article:
-    pattern:  /article/{id}
+publication_delete:
+    pattern:  /publication/{id}
     defaults: { _controller: AdminBundle:Article:deleteArticle }
 
 

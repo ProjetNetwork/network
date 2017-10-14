@@ -9,14 +9,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   -->
-  <link href="{{ asset('css/styles.css') }}" type="text/css" rel="stylesheet" />
   <link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
   <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
 
 </head>
 <body>
 {% if is_granted('ROLE_ADMIN') %}
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #43FF62;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -45,11 +44,13 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-    </div>
+    {% block leftmenu%}
+    {% endblock %}
+
+  </div>
 
     <div class="col-sm-8 text-left"> 
       {% block publication %}
-
       {% endblock %}
 
       {% block event %}
