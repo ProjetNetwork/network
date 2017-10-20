@@ -1,9 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block events %}
+{% endblock %}
 
-      <p><a href="{{path('pevenement_index')}}">Liste des événements</a></p>
-      <p><a href="{{path('evenement_new')}}">Ajouter un événement</a></p>
-      <p><a href="#">autre ...</a></p>
+
+{% block menu %}
+
+<li><a href="#">Ajouter un événement</a></li>
+<li><a href="#">Liste des événements</a></li>
+<li><a href="#">Événement du jour</a></li>
 
 {% endblock %}

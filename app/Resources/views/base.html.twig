@@ -15,7 +15,7 @@
 </head>
 <body>
 {% if is_granted('ROLE_ADMIN') %}
-<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #43FF62;">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -43,9 +43,13 @@
 
 <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-    {% block leftmenu%}
-    {% endblock %}
+    <div class="col-sm-2">
+      <ul class="nav nav-pills nav-stacked">
+
+        <li><a href="#">Ajouter un événement</a></li>
+        <li><a href="#">Liste des événements</a></li>
+        <li><a href="#">Événement du jour</a></li>
+      </ul>
 
   </div>
 
