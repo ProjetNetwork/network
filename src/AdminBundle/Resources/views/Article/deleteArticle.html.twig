@@ -12,3 +12,12 @@
 
 {% endif %}
 {% endblock %}
+{% block leftmenu %}
+  <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add" href="{{ path('publication_index')}}"><i>+</i><span>Liste des posts</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('publication_create')}}"><i>+</i><span>Creer un post</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('publication_create')}}"><i>+</i><span>Post du jour</span></a>
+      </ul>
+  </div>
+{% endblock %}

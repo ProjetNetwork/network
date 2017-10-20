@@ -1,13 +1,18 @@
 {% extends "::base.html.twig" %}
- {% block leftmenu%}
-    <ul class="nav navbar-nav">
-        <li><a href="{{path('publication_index')}}">Voir les publications</a></li>
-    </ul>
-    {% endblock %}
+
 {% block publication %}
 <div class="well">   
 	{{ form_start(form)}}
  	{{ form_widget(form.Name, { 'attr': { 'size' : 40 } }) }}
 	{{ form_rest(form, { 'attr': { 'size' : 40 } })}}
 </div>
+{% endblock %}
+{% block leftmenu %}
+  <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add" href="{{ path('publication_index')}}"><i>+</i><span>Liste des posts</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('publication_create')}}"><i>+</i><span>Creer un post</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('publication_create')}}"><i>+</i><span>Post du jour</span></a>
+      </ul>
+  </div>
 {% endblock %}
