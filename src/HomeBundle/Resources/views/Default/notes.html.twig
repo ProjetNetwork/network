@@ -11,9 +11,7 @@
 	<a href="{{ path('publication_create')}}">Créer une publication</a></br>
     {% for sheet in sheets %}
     	<div class="block_publication">
-        	<a href="{{ path('publication_delete', {'id': sheet.id }) }}">
-        		<button type="button" class="btn btn-danger">Supprimer</button>
-        	</a> 
+            <a class="btn  btn--icon  btn--delete" href="{{ path('publication_delete', {'id': sheet.id }) }}"><i>×</i><span>Delete</span></a>
         	<h3 style="text-align: center;">{{sheet.name}}</h3>
         	<img class="img-responsive center-block"
             	src="{{ asset(sheet.image.webPath) }}"
