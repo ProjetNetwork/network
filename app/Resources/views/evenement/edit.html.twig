@@ -13,15 +13,12 @@
         {{ form_end(delete_form) }}
     </div>
 {% endblock %}
-
 {% block leftmenu %}
   <div class="row content">
-    <div class="col-sm-2">
       <ul class="nav nav-pills nav-stacked">
-
-        <li><a href="#">Ajouter un événement</a></li>
-        <li><a href="#">Liste des événements</a></li>
-        <li><a href="#">Événement du jour</a></li>
+        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_index')}}"><i>+</i><span>Liste des events</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i>+</i><span>Creer un event</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i>+</i><span>Event du jour</span></a>
       </ul>
   </div>
 {% endblock %}
