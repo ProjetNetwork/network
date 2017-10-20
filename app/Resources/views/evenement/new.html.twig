@@ -14,3 +14,12 @@
         </li>
     </ul>
 {% endblock %}
+{% block leftmenu %}
+  <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_index')}}"><i>+</i><span>Liste des events</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i>+</i><span>Creer un event</span></a>
+        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i>+</i><span>Event du jour</span></a>
+      </ul>
+  </div>
+{% endblock %}
