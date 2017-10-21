@@ -23,10 +23,14 @@ nav a {
     float: left;
     clear: both;
     font-family: monospace;
+    font-size: 13px;
     white-space: nowrap;
 }
 
-
+.btn .btn--icon > span{
+    width: 50px;
+    height: 100px;
+}
 
 /* Button elements */
 .btn > span,
@@ -40,6 +44,7 @@ nav a {
     white-space: nowrap;
     color: #222;
     background: #ddd;
+    width: 125px;
 }
 .btn:hover > span,
 .btn:focus > span {
@@ -83,16 +88,20 @@ nav a {
 .btn--favorite:hover > i,
 .btn--favorite:focus > i { color: gold; }
 .btn--add:hover > i,
-.btn--add:focus > i { color: lightblue; }
+.btn--add:focus > i { color: #b7e5ae; }
 .btn--delete:hover > i,
 .btn--delete:focus > i { color: red; }
+.btn--delete:hover{ background: red; }
+.btn--delete:hover span{ background: red; }
 .btn--favorite > span { background: gold; }
-.btn--add > span { background: lightblue; }
-.btn--delete > span { background: red; }
+.btn--add > span { background: #b7e5ae; }
+.btn--delete > span { background: #b7e5ae; }
+
+
 .block_publication {
    border: 5px solid #f2e3d2;
    background: #adffad;
-   background: -webkit-gradient(linear, left top, left bottom, from(#d0fad1), to(#adffad));
+   background: -webkit-gradient(linear, left top, left bottom, from(#b7e5ae), to(#adffad));
    background: -webkit-linear-gradient(top, #d0fad1, #adffad);
    background: -moz-linear-gradient(top, #d0fad1, #adffad);
    background: -ms-linear-gradient(top, #d0fad1, #adffad);
