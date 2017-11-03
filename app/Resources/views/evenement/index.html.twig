@@ -3,15 +3,19 @@
 {% block event %}
     <h1>Evenements</h1>
         <a href="{{ path('evenement_new') }}">Créer un nouvel évenement</a>
-        {% for evenement in evenements %}
+        {% for evenement in evenements %}<nav class="navbar navbar-default evenement-container-collapse" style="background-color: #000000>
+      <button class="btn" data-toggle="collapse" data-target="#demo{{evenement.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down"  style="font-size: 35px;"></span></i>
+      <p class="evenement-text-collapse">{{evenement.name}}</p></button>
+      <div id="demo{{evenement.name}}" class="collapse">
             <div class="well">
-                <h3 style="text-align: center;">{{ evenement.name }}</h3>
                 <div class="well" style="background-color: white;">
                     <h3>{{ evenement.message }}</h3>
                 </div>
                 <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">Voir</a></br>
                 <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Editer</a>
             </div>
+                  </div>
+    </nav>
         {% endfor %}
 {% endblock %}
 {% block leftmenu %}
