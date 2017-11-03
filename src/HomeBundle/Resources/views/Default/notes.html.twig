@@ -1,17 +1,25 @@
 {% extends "::base.html.twig" %}
 {% block publication %}
 {% if is_granted('ROLE_ADMIN') %}
+<script type="text/javascript">
+    var sheet = {{ sheet.name }};
+</script>
   	<h3 style="text-align: center;"> PUBLICATIONS </h3>
     {% for sheet in sheets %}
-    	<div class="block_publication">
-            <a class="btn  btn--icon  btn--delete" href="{{ path('publication_delete', {'id': sheet.id }) }}"><i><span class="glyphicon glyphicon-trash" id="remove"></span></i><span>Delete</span></a>
-        	<h3 style="text-align: center;">{{sheet.name}}</h3>
-        	<img class="img-responsive center-block"
+    <nav class="navbar navbar-default publication-container-collapse" style="background-color: #000000>
+      <button class="btn" data-toggle="collapse" data-target="#demo{{sheet.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down"  style="font-size: 35px;"></span></i>
+      <p class="publication-text-collapse">{{sheet.name}}</p></button>
+      <div id="demo{{sheet.name}}" class="collapse">
+    	    <div class="block_publication">
+              <a class="btn  btn--icon  btn--delete" href="{{ path('publication_delete', {'id': sheet.id }) }}"><i><span class="glyphicon glyphicon-trash" id="remove"></span></i><span>Delete</span></a>
+        	   <img class="img-responsive center-block"
             	src="{{ asset(sheet.image.webPath) }}"
             	alt="{{ sheet.image.alt }}"
           	/>
-        	<h4 style="text-align:center;">{{sheet.etape1|nl2br}}</h4></br>
-		</div>
+        	  <h4 style="text-align:center;">{{sheet.etape1|nl2br}}</h4></br>
+		      </div>
+      </div>
+    </nav>
 		</br>
     {% endfor %}
 {% endif %}
@@ -25,3 +33,4 @@
       </ul>
   </div>
 {% endblock %}
+

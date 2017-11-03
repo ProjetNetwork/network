@@ -1,3 +1,15 @@
+.publication-text-collapse{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.publication-container-collapse{
+  border-style: inset;
+  border-width: 5px;
+}
+
 .nav nav-pills{
   padding-top: 50px;
 }
