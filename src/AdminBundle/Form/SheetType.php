@@ -17,11 +17,11 @@ class SheetType extends AbstractType
         $builder
             ->add('Titre',  array(
            'label' => 'input comment', 
-           'attr' => array('style' => 'width: 200px')
+           'attr' => array('style' => 'width: 20px')
           ))
             ->add('Texte', array(
            'label' => 'input comment', 
-           'attr' => array('style' => 'width: 200px')
+           'attr' => array('style' => 'width: 20px')
           ))
             ;
     }

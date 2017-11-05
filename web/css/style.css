@@ -1,4 +1,24 @@
-
+.navbar-leftmenu-text{
+  color:black;
+  font-size:20px;
+  text-shadow: 2px 2px #556f96
+}
+.navbar-custom {
+    color: #4876bf;
+    background-color: #4876bf;
+}
+.navbar-custom-publication {
+    color: #4876bf;
+    background-color: #4876bf;
+    border-color: black;
+    border:2px;
+}
+.navbar-brand{
+  color:black;
+}
+.navbar-text{
+  color:black;
+}
 i.material-icons {
     font-size: 1rem;
     color: black;
@@ -143,6 +163,7 @@ i.material-icons:hover {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: bold;
+  color:black;
 }
 
 .publication-container-collapse{
@@ -212,10 +233,10 @@ nav a {
 }
 .btn:hover > span,
 .btn:focus > span {
-    background: lightgreen;
+    background: #417dd8;
 }
 .btn:active > span {
-    background: limegreen;
+    background: #417dd8;
     transition: none;
 }
 
@@ -228,19 +249,19 @@ nav a {
     font-weight: bold;
     font-style: normal;
     color: white;
-    background: #222;
+    background: #4876bf;
 }
 .btn--icon > i:after {
     content: "";
     border: 0.35em solid;
-    border-color: transparent transparent transparent #222;
+    border-color: transparent transparent transparent #4876bf;
     position: absolute;
     top: 0.775em;
     right: -0.65em;
 }
 .btn--icon:hover > i,
 .btn--icon:focus > i {
-    color: #ddd;
+    color: black;
 }
 .btn--icon > span {
     border-radius: 0 0.25em 0.25em 0;
@@ -250,21 +271,21 @@ nav a {
 
 /* Button custom states */
 .btn--favorite:hover > i,
-.btn--favorite:focus > i { color: gold; }
+.btn--favorite:focus > i { color: #4876bf; }
 .btn--add:hover > i,
-.btn--add:focus > i { color: #b7e5ae; }
+.btn--add:focus > i { color: #4876bf; }
 .btn--delete:hover > i,
 .btn--delete:focus > i { color: red; }
 .btn--delete:hover{ background: red; }
 .btn--delete:hover span{ background: red; }
 .btn--favorite > span { background: gold; }
-.btn--add > span { background: #b7e5ae; }
-.btn--delete > span { background: #b7e5ae; }
+.btn--add > span { background: #4876bf; }
+.btn--delete > span { background: #4876bf; }
 
 
 .block_publication {
    border: 5px solid #f2e3d2;
-   background: #adffad;
+   background: #4876bf;
    background: -webkit-gradient(linear, left top, left bottom, from(#b7e5ae), to(#adffad));
    background: -webkit-linear-gradient(top, #d0fad1, #adffad);
    background: -moz-linear-gradient(top, #d0fad1, #adffad);

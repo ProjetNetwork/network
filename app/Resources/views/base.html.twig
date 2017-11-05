@@ -20,7 +20,7 @@
 </head>
 <body>
 {% if is_granted('ROLE_ADMIN') %}
-<nav class="navbar navbar-default" style="background-color: #000000>
+<nav class="navbar-custom" style="background-color: #000000>
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,12 +32,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{path('evenement_index')}}">Événement</a></li>
-        <li><a href="{{path('publication_index')}}">Publication</a></li>
+        <li><a class="navbar-text" href="{{path('evenement_index')}}">Événement</a></li>
+        <li><a class="navbar-text" href="{{path('publication_index')}}">Publication</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if app.user %}
-        <li><a href="{{path('fos_user_security_logout')}}">    <i class="material-icons"><span class="glyphicon glyphicon-log-in"></span></i>
+        <li><a href="{{path('fos_user_security_logout')}}">    <i class="material-icons"><span class="glyphicon glyphicon-log-out"></span></i>
 </span></a></li>
         {% else %}
          <li><a href="{{path('fos_user_security_login')}}"><span class="glyphicon glyphicon-user"></span> Connexion</a></li>
