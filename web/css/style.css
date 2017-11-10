@@ -171,6 +171,11 @@
 .navbar-text{
   color:black;
 }
+.navbar-text:hover{
+  font-size: 20px;
+    color:black;
+
+}
 i.material-icons {
     font-size: 1rem;
     color: black;
