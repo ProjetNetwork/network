@@ -6,8 +6,8 @@
 </script>
   	<h3 style="text-align: center;"> PUBLICATIONS </h3>
     {% for sheet in sheets %}
-    <nav class="navbar navbar-default publication-container-collapse" style="background-color: #000000>
-      <button class="btn" data-toggle="collapse" data-target="#demo{{sheet.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down"  style="font-size: 35px;"></span></i>
+    <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
+      <button class="btn" data-toggle="collapse" data-target="#demo{{sheet.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down"  style="font-size: 35px;color: black;"></span></i>
       <p class="publication-text-collapse">{{sheet.name}}</p></button>
       <div id="demo{{sheet.name}}" class="collapse">
     	    <div class="block_publication">
@@ -27,9 +27,8 @@
 {% block leftmenu %}
   <div class="row content">
       <ul class="nav nav-pills nav-stacked">
-        <a class="btn  btn--icon  btn--add" href="{{ path('publication_index')}}"><i><span class="glyphicon glyphicon-th-list"></span></i><span>Liste</span></a>
-        <a class="btn  btn--icon  btn--add" href="{{ path('publication_create')}}"><i><span class="glyphicon glyphicon-plus-sign"></span></i><span>Creer un post</span></a>
-        <a class="btn  btn--icon  btn--add" href="{{ path('publication_create')}}"><i>+</i><span>Post du jour</span></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('publication_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('publication_create')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
       </ul>
   </div>
 {% endblock %}
