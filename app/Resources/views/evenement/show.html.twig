@@ -14,11 +14,10 @@
     </div>
 {% endblock %}
 {% block leftmenu %}
-  <div class="row content">
+   <div class="row content">
       <ul class="nav nav-pills nav-stacked">
-        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_index')}}"><i><span class="glyphicon glyphicon-th-list"></span></i><span>Liste</span></a>
-        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i><span class="glyphicon glyphicon-plus-sign"></span></i><span>Creer un event</span></a>
-        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i><span class="glyphicon glyphicon-plus-sign"></span></i><span>Event du jour</span></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('evenement_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('evenement_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
       </ul>
   </div>
 {% endblock %}

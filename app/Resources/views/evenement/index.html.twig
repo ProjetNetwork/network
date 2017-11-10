@@ -3,9 +3,9 @@
 {% block event %}
     <h1>Evenements</h1>
         <a href="{{ path('evenement_new') }}">Créer un nouvel évenement</a>
-        {% for evenement in evenements %}<nav class="navbar navbar-default evenement-container-collapse" style="background-color: #000000>
-      <button class="btn" data-toggle="collapse" data-target="#demo{{evenement.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down"  style="font-size: 35px;"></span></i>
-      <p class="evenement-text-collapse">{{evenement.name}}</p></button>
+        {% for evenement in evenements %}    <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
+      <button class="btn" data-toggle="collapse" data-target="#demo{{evenement.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
+       <p class="publication-text-collapse">{{evenement.name}}</p></button>
       <div id="demo{{evenement.name}}" class="collapse">
             <div class="well">
                 <div class="well" style="background-color: white;">
@@ -18,12 +18,12 @@
     </nav>
         {% endfor %}
 {% endblock %}
+
 {% block leftmenu %}
-  <div class="row content">
+   <div class="row content">
       <ul class="nav nav-pills nav-stacked">
-        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_index')}}"><i><span class="glyphicon glyphicon-th-list"></span></i><span>Liste</span></a>
-        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i><span class="glyphicon glyphicon-plus-sign"></span></i><span>Creer un event</span></a>
-        <a class="btn  btn--icon  btn--add" href="{{ path('evenement_new')}}"><i><span class="glyphicon glyphicon-plus-sign"></span></i><span>Event du jour</span></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('evenement_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('evenement_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
       </ul>
   </div>
 {% endblock %}
