@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block event %}
-    <h1>Evenements</h1>
-        <a href="{{ path('evenement_new') }}">Créer un nouvel évenement</a>
+    <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Evenements</h1></div>
         {% for evenement in evenements %}    <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
       <button class="btn" data-toggle="collapse" data-target="#demo{{evenement.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
        <p class="publication-text-collapse">{{evenement.name}}</p></button>
