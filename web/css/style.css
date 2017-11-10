@@ -414,18 +414,17 @@ nav a {
 .btn--icon:hover > i,
 .btn--icon:focus > i {
     color: black;
+    font-size: 20px;
 }
 .btn--icon > span {
     border-radius: 0 0.25em 0.25em 0;
 }
 
 
-
 /* Button custom states */
 .btn--favorite:hover > i,
 .btn--favorite:focus > i { color: #4876bf; }
-.btn--add:hover > i,
-.btn--add:focus > i { color: #4876bf; }
+
 .btn--delete:hover > i,
 .btn--delete:focus > i { color: red; }
 .btn--delete:hover{ background: red; }
