@@ -4,7 +4,10 @@
     <div class="well">
         <h1>{{ evenement.name }}</h1>
         <div class="well">
-            {{ evenement.message }}
+          <div class="fr-view">
+
+            {{ froala_display(evenement.message) }}
+        </div>
         </div>
         <a href="{{ path('evenement_index') }}">Revenir à la liste</a></br>
         <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Modifier</a>

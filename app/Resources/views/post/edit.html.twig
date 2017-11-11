@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block event %}
+    <h1>Modifier la publication</h1>
+    <div class="well">
+        {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Edit" />
+        {{ form_end(edit_form) }}
+        <a href="{{ path('post_index') }}">Revenir à la liste</a>
+        {{form_start(delete_form) }}
+            <input type="submit" value="Delete" class="btn btn-danger">
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}
+{% block leftmenu %}
+   <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('post_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('post_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
+      </ul>
+  </div>
+{% endblock %}

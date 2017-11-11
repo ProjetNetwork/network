@@ -2,13 +2,17 @@
 
 {% block event %}
     <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Evenements</h1></div>
-        {% for evenement in evenements %}    <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
-      <button class="btn" data-toggle="collapse" data-target="#demo{{evenement.name}}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
+        {% for evenement in evenements %} 
+
+           <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
+      <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
        <p class="publication-text-collapse">{{evenement.name}}</p></button>
-      <div id="demo{{evenement.name}}" class="collapse">
+      <div id="demo{{ loop.index }}" class="collapse">
             <div class="well">
                 <div class="well" style="background-color: white;">
-                    <h3>{{ evenement.message }}</h3>
+                <div class="fr-view">
+                    <h3>{{ froala_display(evenement.message) }}</h3>
+                    </div>
                 </div>
                 <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">Voir</a></br>
                 <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Editer</a>

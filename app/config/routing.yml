@@ -1,3 +1,7 @@
+home_post:
+    resource: "@HomeBundle/Controller/PostController.php"
+    type:     annotation
+
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /
@@ -15,8 +19,9 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-
-
+kms_froala_editor:
+  resource: "@KMSFroalaEditorBundle/Resources/config/routing.yml"
+  prefix:   /froalaeditor
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

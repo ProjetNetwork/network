@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new HomeBundle\HomeBundle(),
             new AdminBundle\AdminBundle(),
+            new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

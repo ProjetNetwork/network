@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block event %}
+    <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Publications</h1></div>
+        {% for post in posts %} 
+
+           <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
+      <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
+       <p class="publication-text-collapse">{{post.title}}</p></button>
+      <div id="demo{{ loop.index }}" class="collapse">
+            <div class="well">
+                <div class="well" style="background-color: white;">
+                <div class="fr-view">
+                    <h3>{{ froala_display(post.content) }}</h3>
+                    </div>
+                </div>
+                <a href="{{ path('post_show', { 'id': post.id }) }}">Voir</a></br>
+                <a href="{{ path('post_edit', { 'id': post.id }) }}">Editer</a>
+            </div>
+                  </div>
+    </nav>
+        {% endfor %}
+{% endblock %}
+
+{% block leftmenu %}
+   <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('post_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('post_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
+      </ul>
+  </div>
+{% endblock %}

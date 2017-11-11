@@ -77,3 +77,8 @@ fos_user:
     from_email:
         address: a@a.fr
         sender_name: a@a.fr
+
+kms_froala_editor:
+
+  language: "fr"
+   
