@@ -1,25 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block event %}
-    <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Publications</h1></div>
-        {% for post in posts %} 
-
-           <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
-      <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
-       <p class="publication-text-collapse">{{post.title}}</p></button>
-      <div id="demo{{ loop.index }}" class="collapse">
+    <div class='spiralContainer' style="float: left">
+        <div class='spiral'>
+    </div>
+    </div>
+    <div>
+        <h1>Publication</h1>
+    </div>
+    {% for post in posts %} 
+        <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
+        <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
+        <p class="publication-date-collapse">{{post.date|date('d-m-Y')}}</p> 
+        <p class="publication-text-collapse">{{post.title}}</p></button>
+        <div id="demo{{ loop.index }}" class="collapse">
             <div class="well">
                 <div class="well" style="background-color: white;">
-                <div class="fr-view">
-                    <h3>{{ froala_display(post.content) }}</h3>
+                    <div class="fr-view">
+                        <h3>{{ froala_display(post.content) }}</h3>
                     </div>
                 </div>
                 <a href="{{ path('post_show', { 'id': post.id }) }}">Voir</a></br>
                 <a href="{{ path('post_edit', { 'id': post.id }) }}">Editer</a>
             </div>
-                  </div>
+        </div>
     </nav>
-        {% endfor %}
+    {% endfor %}
 {% endblock %}
 
 {% block leftmenu %}

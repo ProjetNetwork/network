@@ -19,6 +19,11 @@ class Evenement
      */
     private $name;
 
+       /**
+     * @var \DateTime
+     */
+    private $date;
+
     /**
      * @var string
      */
@@ -58,6 +63,28 @@ class Evenement
         return $this->name;
     }
 
+ /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Evenement
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
     /**
      * Set message
      *

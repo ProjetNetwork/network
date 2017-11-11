@@ -5,6 +5,8 @@ namespace HomeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 
 class EvenementType extends AbstractType
 {
@@ -16,6 +18,7 @@ class EvenementType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('date', DateType::class, array( 'widget' => 'choice'))
             ->add('message', "froala" )
         ;
     }

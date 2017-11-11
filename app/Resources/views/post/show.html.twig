@@ -2,11 +2,10 @@
 
 {% block event %}
     <div class="well">
-        <h1>{{ evenement.name }}</h1>
+        <h1>{{ post.title }}</h1>
         <div class="well">
           <div class="fr-view">
-
-            {{ froala_display(evenement.message) }}
+            {{ froala_display(post.content) }}
         </div>
         </div>
         <a href="{{ path('post_index') }}">Revenir à la liste</a></br>
