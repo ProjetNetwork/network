@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block event %}
+    <div class="well">
+        <h1>{{ event.titre }}</h1>
+        <p class="publication-date-collapse">{{event.date|date('d-m-Y')}}</p> 
+
+        <div class="well">
+          <div class="fr-view">
+            {{ froala_display(event.message) }}
+        </div>
+        </div>
+        <a href="{{ path('event_index') }}">Revenir à la liste</a></br>
+        <a href="{{ path('event_edit', { 'id': event.id }) }}">Modifier</a>
+         {{ form_start(delete_form) }}
+             <input type="submit" value="Delete" class="btn btn-danger">
+         {{ form_end(delete_form) }}
+    </div>
+{% endblock %}
+{% block leftmenu %}
+   <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('event_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('event_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
+      </ul>
+  </div>
+{% endblock %}

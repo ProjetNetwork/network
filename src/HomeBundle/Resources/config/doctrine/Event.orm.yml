@@ -1,0 +1,20 @@
+HomeBundle\Entity\Event:
+    type: entity
+    table: null
+    repositoryClass: HomeBundle\Repository\EventRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+        titre:
+            type: string
+            length: 255
+        message:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

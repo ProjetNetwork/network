@@ -2,119 +2,112 @@
 
 namespace HomeBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
- * Article
- *
- * @ORM\Table(name="event")
- * @ORM\Entity(repositoryClass="HomeBundle\Repository\EventRepository")
+ * Event
  */
 class Event
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     *
      */
-    protected $id;
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
      */
-    protected $name;
+    private $titre;
 
-    
     /**
      * @var string
-     *
-     * @ORM\Column(name="titre1", type="string", length=255)
      */
-
-
-    protected $etape1;
-
-
-     /**
-      * @ORM\OneToOne(targetEntity="AdminBundle\Entity\Image", cascade={"persist", "remove"})
-      * @ORM\JoinColumn(nullable=true)
-      */
-    protected $image;
-
-
+    private $message;
 
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
         return $this->id;
     }
 
-    
-
     /**
-     * Set name
+     * Set date
      *
-     * @param string $name
-     * @return Article
+     * @param \DateTime $date
+     *
+     * @return Event
      */
-    public function setName($name)
+    public function setDate($date)
     {
-        $this->name = $name;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get date
      *
-     * @return string 
+     * @return \DateTime
      */
-    public function getName()
+    public function getDate()
     {
-        return $this->name;
+        return $this->date;
     }
 
-     
     /**
-     * Set etape1
+     * Set titre
      *
-     * @param string $etape1
-     * @return Article
+     * @param string $titre
+     *
+     * @return Event
      */
-    public function setEtape1($etape1)
+    public function setTitre($titre)
     {
-        $this->etape1 = $etape1;
+        $this->titre = $titre;
 
         return $this;
     }
 
     /**
-     * Get etape1
+     * Get titre
      *
-     * @return string 
+     * @return string
      */
-    public function getEtape1()
+    public function getTitre()
     {
-        return $this->etape1;
+        return $this->titre;
     }
 
-      public function setImage(Image $image = null)
-  {
-    $this->image = $image;
-  }
+    /**
+     * Set message
+     *
+     * @param string $message
+     *
+     * @return Event
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
 
-  public function getImage()
-  {
-    return $this->image;
-  }
+        return $this;
+    }
+
+    /**
+     * Get message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
 }
+

@@ -2,21 +2,21 @@
 
 {% block event %}
     <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Evenements</h1></div>
-        {% for evenement in evenements %} 
+        {% for event in events %} 
 
            <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
       <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
-      <p class="publication-date-collapse">{{evenement.date|date('d-m-Y')}}</p> 
-       <p class="publication-text-collapse">{{evenement.name}}</p></button>
+      <p class="publication-date-collapse">{{event.date|date('d-m-Y')}}</p> 
+       <p class="publication-text-collapse">{{event.titre}}</p></button>
       <div id="demo{{ loop.index }}" class="collapse">
             <div class="well">
                 <div class="well" style="background-color: white;">
                 <div class="fr-view">
-                    <h3>{{ froala_display(evenement.message) }}</h3>
+                    <h3>{{ froala_display(event.message) }}</h3>
                     </div>
                 </div>
-                <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">Voir</a></br>
-                <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Editer</a>
+                <a href="{{ path('event_show', { 'id': event.id }) }}">Voir</a></br>
+                <a href="{{ path('event_edit', { 'id': event.id }) }}">Editer</a>
             </div>
                   </div>
     </nav>
@@ -26,8 +26,8 @@
 {% block leftmenu %}
    <div class="row content">
       <ul class="nav nav-pills nav-stacked">
-        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('evenement_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
-        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('evenement_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('event_index')}}"><span class="navbar-leftmenu-text">Liste</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('event_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
       </ul>
   </div>
 {% endblock %}

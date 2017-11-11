@@ -1,6 +1,19 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block event %}
+    {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show">
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
 </div>
+
+{% endblock %}
+{% block leftmenu %}
+   <div class="row content">
+      <ul class="nav nav-pills nav-stacked">
+        <a class="btn  btn--icon  btn--add navbar-custom" href=""><span class="navbar-leftmenu-text">Mon profil</span><i><span class="glyphicon glyphicon-th-list" style="font-size: 35px;"></span></i></a>
+        <a class="btn  btn--icon  btn--add navbar-custom" href="{{ path('event_new')}}"><span class="navbar-leftmenu-text">Creer</span><i><span class="glyphicon glyphicon-plus-sign" style="font-size: 35px;"></span></i></a>
+      </ul>
+  </div>
+{% endblock %}

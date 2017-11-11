@@ -1,3 +1,7 @@
+home_event:
+    resource: "@HomeBundle/Controller/EventController.php"
+    type:     annotation
+
 home_post:
     resource: "@HomeBundle/Controller/PostController.php"
     type:     annotation
