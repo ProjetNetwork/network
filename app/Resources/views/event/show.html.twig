@@ -3,7 +3,7 @@
 {% block event %}
     <div class="well">
         <h1>{{ event.titre }}</h1>
-        <p class="publication-date-collapse">{{event.date|date('d-m-Y')}}</p> 
+        <p class="publication-date-collapse">Le {{event.date|date('d-m-Y')}} à {{event.date|date('h:s')}} </p> 
 
         <div class="well">
           <div class="fr-view">

@@ -6,7 +6,7 @@
 
            <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
       <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
-      <p class="publication-date-collapse">{{event.date|date('d-m-Y')}}</p> 
+      <p class="publication-date-collapse">Le {{event.date|date('d-m-Y')}} à {{event.date|date('h:m')}}</p> 
        <p class="publication-text-collapse">{{event.titre}}</p></button>
       <div id="demo{{ loop.index }}" class="collapse">
             <div class="well">
