@@ -8,10 +8,10 @@
     <div>
         <h1>Publication</h1>
     </div>
-    {% for post in posts %} 
+    {% for post in posts |reverse%} 
         <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
         <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
-      <p class="publication-date-collapse">Le {{post.date|date('d-m-Y')}} à {{post.date|date('h:m')}}</p> 
+      <p class="publication-date-collapse">Le {{post.date|date('d/m/Y')}} à {{post.date|date('H:i')}}</p> 
         <p class="publication-text-collapse">{{post.title}}</p></button>
         <div id="demo{{ loop.index }}" class="collapse">
             <div class="well">
@@ -20,8 +20,10 @@
                         <h3>{{ froala_display(post.content) }}</h3>
                     </div>
                 </div>
-                <a href="{{ path('post_show', { 'id': post.id }) }}">Voir</a></br>
-                <a href="{{ path('post_edit', { 'id': post.id }) }}">Editer</a>
+                <ul class="nav nav-pills nav-stacked">
+                <a href="{{ path('post_show', { 'id': post.id }) }}" class="btn2  btn2--icon  btn2--add navbar-custom"><span class="button-text">Voir</span><i><span class="glyphicon glyphicon-eye-open" style="font-size: 15px;"></span></i></a></br>
+                 <a href="{{ path('post_edit', { 'id': post.id }) }}" class="btn2  btn2--icon  btn2--add navbar-custom"><span class="button-text">Editer</span><i><span class="glyphicon glyphicon-edit" style="font-size: 15px;"></span></i></a></br>               
+                </ul>
             </div>
         </div>
     </nav>

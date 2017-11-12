@@ -1,3 +1,4 @@
+
 .spiralContainer {
   border-radius: 50%;
   width:50px;
@@ -154,6 +155,16 @@
   color:black;
   font-size:20px;
   text-shadow: 2px 2px #556f96
+}
+.button-text{
+  color:black;
+  font-size:14px;
+  text-shadow: 1px 1px #556f96
+}
+.button-text:hover{
+  color:black;
+  font-size:16px;
+  text-shadow: 1px 1px #556f96
 }
 .navbar-custom {
     color: #4876bf;
@@ -442,8 +453,95 @@ nav a {
 .btn--delete:hover span{ background: red; }
 .btn--favorite > span { background: gold; }
 .btn--add > span { background: #4876bf; }
-.btn--delete > span { background: #4876bf; }
+.btn--delete > span { background: red; }
 
+/*-------------*/
+.btn2 {
+    margin: 0.25em;
+    float: left;
+    clear: both;
+    font-family: monospace;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.btn2 .btn--icon > span{
+    width: 35px;
+    height: 45px;
+}
+
+/* Button elements */
+.btn2 > span,
+.btn2--icon > i {
+    padding: 0.5em 1em;
+    display: inline-block;
+    transition: 0.25s all;
+}
+.btn2 > span {
+    border-radius: 0.25em;
+    white-space: nowrap;
+    color: #222;
+    background: #ddd;
+    width: 70px;
+}
+.btn2:hover > span,
+.btn2:focus > span {
+    background: #417dd8;
+}
+.btn2:active > span {
+    background: #417dd8;
+    transition: none;
+}
+.btn2-submit-delete{
+  border: none;
+  background-color: red;
+}
+
+.btn2-submit-delete:hover{
+  border: none;
+  background-color: red;
+}
+
+
+/* Button with an icon */
+.btn2--icon > i {
+    border-radius: 0.25em 0 0 0.25em;
+    position: relative;
+    font-weight: bold;
+    font-style: normal;
+    color: white;
+    background: #4876bf;
+}
+.btn2--icon > i:after {
+    content: "";
+    border: 0.35em solid;
+    border-color: transparent transparent transparent #4876bf;
+    position: absolute;
+    top: 0.775em;
+    right: -0.65em;
+}
+.btn2--icon:hover > i,
+.btn2--icon:focus > i {
+    color: black;
+    font-size: 20px;
+}
+.btn2--icon > span {
+    border-radius: 0 0.25em 0.25em 0;
+}
+
+
+/* Button custom states */
+
+.btn2--favorite:hover > i,
+.btn2--favorite:focus > i { color: #4876bf; }
+
+.btn2--delete:hover > i,
+.btn2--delete:focus > i { color: red; }
+.btn2--delete:hover{ background: red; }
+.btn2--delete:hover span{ background: red; font-size: 20px; }
+.btn2--favorite > span { background: gold; }
+.btn2--add > span { background: #4876bf; }
+.btn2--delete > span { background: #4876bf; }
 
 .block_publication {
    border: 5px solid #f2e3d2;

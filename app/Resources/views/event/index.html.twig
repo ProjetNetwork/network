@@ -2,12 +2,12 @@
 
 {% block event %}
     <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Evenements</h1></div>
-        {% for event in events %} 
+        {% for event in events |reverse%} 
 
            <nav class="navbar navbar-custom-publication publication-container-collapse" style="background-color: #000000>
       <button class="btn" data-toggle="collapse" data-target="#demo{{ loop.index }}"><i><span id="collapse-span" class="glyphicon glyphicon-menu-down" style="font-size: 35px;color: black;"></span></i>
-      <p class="publication-date-collapse">Le {{event.date|date('d-m-Y')}} à {{event.date|date('h:m')}}</p> 
-       <p class="publication-text-collapse">{{event.titre}}</p></button>
+      <p class="publication-date-collapse">Le {{event.date|date('d/m/Y')}} à {{event.date|date('H:i')}}</p> 
+      <p class="publication-text-collapse">{{event.titre}}</p></button>
       <div id="demo{{ loop.index }}" class="collapse">
             <div class="well">
                 <div class="well" style="background-color: white;">
@@ -15,8 +15,10 @@
                     <h3>{{ froala_display(event.message) }}</h3>
                     </div>
                 </div>
-                <a href="{{ path('event_show', { 'id': event.id }) }}">Voir</a></br>
-                <a href="{{ path('event_edit', { 'id': event.id }) }}">Editer</a>
+                <ul class="nav nav-pills nav-stacked">
+                <a href="{{ path('event_show', { 'id': event.id }) }}" class="btn2  btn2--icon  btn2--add navbar-custom"><span class="button-text">Voir</span><i><span class="glyphicon glyphicon-eye-open" style="font-size: 15px;"></span></i></a></br>
+                 <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn2  btn2--icon  btn2--add navbar-custom"><span class="button-text">Editer</span><i><span class="glyphicon glyphicon-edit" style="font-size: 15px;"></span></i></a></br>               
+                </ul>
             </div>
                   </div>
     </nav>
