@@ -1,0 +1,148 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.11.1deb2+deb7u8
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Ven 22 Septembre 2017 à 22:42
+-- Version du serveur: 5.5.55
+-- Version de PHP: 5.4.45-0+deb7u8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de données: `devnote`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `article`
+--
+
+CREATE TABLE IF NOT EXISTS `article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `titre1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `etape1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `titre2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `etape2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `titre3` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `etape3` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_23A0E663DA5256D` (`image_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=33 ;
+
+--
+-- Contenu de la table `article`
+--
+
+INSERT INTO `article` (`id`, `image_id`, `name`, `titre1`, `etape1`, `titre2`, `etape2`, `titre3`, `etape3`) VALUES
+(29, 30, 'MISE EN PLACE DE L''HTTPS', 'Installation d''un certificat SSL :', '- Il faut installer letsencrypt :\r\n\r\ngit clone https://github.com/letsencrypt/letsencrypt\r\n\r\n- Ensuite il faut faire la commande suivante à la racine du dossier letsencrypt :\r\n\r\n./letsencrypt-auto -d lesite.com -d www.lesite.com', 'Modifier le Vhost :', '- Il faut modifier le vhost dédié au certificat SSL afin qu''il recupère le certificat SSL et qu''il fasse la redirection en HTTPS :\r\n\r\n<IfModule mod_ssl.c>\r\n<VirtualHost *:443>\r\nServerAdmin nom@gmail.com\r\nDocumentRoot /var/www/dossier_site/\r\nServerName les', '.', '.'),
+(30, 31, 'SAUVEGARDE AUTOMATIQUE D''UNE BDD', 'Crontab :', '- Il faut aller dans le dossier /etc , et faire cette commande :\r\n\r\ncrontab -e\r\n\r\nPuis, ajouter cette ligne :\r\n\r\n00 16 * * * mysqldump -u root -pMotdePasse NomBDD > maSauvegarde.sql\r\n\r\nTout les jours à 16h00, la base de donnée sera sauvegardée dans le fic', '.', '.', '.', '.'),
+(32, 33, 'Smarty', 'A savoir', 'eq ->  ==\r\n\r\nneq -> !=\r\n\r\ngt ->  >\r\n\r\nlt ->   <\r\n\r\nnot -> !', '.', '.', '.', '.');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `delete`
+--
+
+CREATE TABLE IF NOT EXISTS `delete` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `raison` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image`
+--
+
+CREATE TABLE IF NOT EXISTS `image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34 ;
+
+--
+-- Contenu de la table `image`
+--
+
+INSERT INTO `image` (`id`, `url`, `alt`) VALUES
+(30, 'jpeg', 'logo.jpg'),
+(31, 'jpeg', 'logo.jpg'),
+(33, 'gif', 'enabled.gif');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `locked` tinyint(1) NOT NULL,
+  `expired` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+  `credentials_expired` tinyint(1) NOT NULL,
+  `credentials_expire_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_8D93D64992FC23A8` (`username_canonical`),
+  UNIQUE KEY `UNIQ_8D93D649A0D96FBF` (`email_canonical`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
+(1, 'admin', 'admin', 'dsfw@dsf.fr', 'dsfw@dsf.fr', 1, 'lqsnbhdst3kckso4k08k0s0cs8gkksc', 'S4oHRiakYtdt9YaQ01YJNy4gK6SPAsYDPnDr/WBHa1SpCLVSMK1fKs94bcYzYyQAhvE6x1fusBwYbWA12LO/og==', '2017-09-22 13:56:21', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vendu`
+--
+
+CREATE TABLE IF NOT EXISTS `vendu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `raison` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `article`
+--
+ALTER TABLE `article`
+  ADD CONSTRAINT `FK_23A0E663DA5256D` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

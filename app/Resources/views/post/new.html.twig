@@ -4,7 +4,7 @@
     <div class='spiralContainer' style="float: left"><div class='spiral'></div></div><div><h1>Créer une publication</h1></div>
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Create"/>
     {{ form_end(form) }}
 
     <ul>
@@ -12,6 +12,7 @@
             <a href="{{ path('post_index') }}">Revenir à la liste</a>
         </li>
     </ul>
+    {{ tinymce_init() }}
 {% endblock %}
 {% block leftmenu %}
    <div class="row content">

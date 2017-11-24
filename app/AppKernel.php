@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new HomeBundle\HomeBundle(),
             new AdminBundle\AdminBundle(),
             new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+
 
         );
 

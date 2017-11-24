@@ -9,8 +9,9 @@
         {{ form_end(edit_form) }}
         {{form_start(delete_form) }}
         <a href="" class="btn2  btn2--delete"><span style="background-color: red;"><input type="submit" value="" class="btn2-submit-delete" /><i><span class="glyphicon glyphicon-remove" style="font-size: 25px;"></span></i></span></a></br></br></br>
-
         {{ form_end(delete_form) }}
+        {{ tinymce_init() }}
+
     </div>
 {% endblock %}
 {% block leftmenu %}
